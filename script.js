@@ -39,6 +39,7 @@ numbers.forEach(function(n) {
   });
 
   var fade = function() {
+    // setTimeout and color values
     timeColor = [
       { time: 1, color: '#339966'},
       { time: 100, color: '#66B38C'},
@@ -46,26 +47,12 @@ numbers.forEach(function(n) {
       { time: 300, color: '#CCE6D9'},
       { time: 350, color: 'white'}
     ];
-    timeColor.forEach(function(tC) {
-      console.log(tC.time);
-      console.log(tC.color);
-    })
-
+    // iterate through timeColor objects
+    timeColor.forEach( function(tC) {
       setTimeout( function() {
-      element.style.cssText = 'background-color: #339966;';
-    }, 1)
-    setTimeout( function() {
-      element.style.cssText = 'background-color: #66B38C;';
-    }, 100)
-    setTimeout( function() {
-      element.style.cssText = 'background-color: #99CCB3;';
-    }, 200)
-    setTimeout( function() {
-      element.style.cssText = 'background-color: #CCE6D9;';
-    }, 300)
-    setTimeout( function() {
-      element.style.cssText = 'background-color: white;';
-    }, 350)
-}
+        element.style.cssText = `background-color: ${tC.color};`;
+      }, tC.time)
+    })
+  }
 
   });
