@@ -3,7 +3,6 @@ var keyValue = "";
 
 var keyValueViewer = document.querySelector("p");
 keyValueViewer.innerHTML = "Enter six numbers";
-keyValueViewer.innerHTML = kVVhtml;
 
 numbers.forEach(function(n) {
   var element = document.getElementById(n.toString());
