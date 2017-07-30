@@ -1,14 +1,36 @@
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numbers = [];
+
+while (numbers.length < 10) {
+  i = numbers.length;
+  numbers.push(i);
+}
+
 var keyValue = "";
 
 var keyValueViewer = document.querySelector("p");
 keyValueViewer.innerHTML = "Enter six numbers";
 
-numbers.forEach(function(n) {
-  var element = document.getElementById(n.toString());
-  element.innerHTML = n.toString();
-  element.style.cssText = "background-color: white;";
+var displayKeys = function() {
+  numbers.forEach( function(n) {
 
+    var keypad = document.getElementById('keypad');
+    var key = document.createElement('div');
+    key.id = n.toString();
+
+    keypad.appendChild(key);
+
+    var keyNum = document.getElementById(n.toString());
+    keyNum.innerHTML = n.toString();
+    keyNum.style.cssText = "background-color: white;";
+
+  })
+}
+
+displayKeys();
+
+numbers.forEach( function(n) {
+
+  var element = document.getElementById(n.toString());
   element.addEventListener("click", function() {
     // set keyValueViewer and link to the p tag
 
